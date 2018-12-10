@@ -147,7 +147,7 @@ def publish_web_map_service(request):
     """
     # publish geoserver wms layer
     workspace = 'interpo'
-    service_url = 'http://ec2-18-234-73-227.compute-1.amazonaws.com:8080/geoserver/rest'
+    service_url = 'http://ec2-18-232-162-21.compute-1.amazonaws.com:8080/geoserver/rest'
     
     service = WebMapService.objects.last()
     service.endpoint = service_url

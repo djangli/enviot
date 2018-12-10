@@ -44,7 +44,7 @@ function addInterpolationLayerToMap() {
 
     $.ajax('/show-map/').done(function (service_layer) {     
         console.log(service_layer);
-        var remote_endpoint = 'http://ec2-18-234-73-227.compute-1.amazonaws.com:8080/geoserver/wms';
+        var remote_endpoint = 'http://ec2-18-232-162-21.compute-1.amazonaws.com:8080/geoserver/wms';
         var local_endpoint = 'https://localhost:8080/geoserver/wms';
         interpolationLayer = new ol.layer.Image({
             source: new ol.source.ImageWMS({
