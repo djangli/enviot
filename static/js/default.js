@@ -52,7 +52,8 @@ function addInterpolationLayerToMap() {
                 params: {'LAYERS': service_layer},
                 ratio: 1,
                 serverType: 'geoserver'
-            })
+            }),
+            opacity: 0.5
         });
         
         map.addLayer(interpolationLayer);
