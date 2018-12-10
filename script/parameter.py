@@ -5,7 +5,7 @@ import os
 import sys
 from django.core.wsgi import get_wsgi_application
 
-proj_path = os.path.dirname(os.path.dirname(__file__))
+proj_path = '/home/ubuntu/enviot/'#os.path.dirname(os.path.dirname(__file__))
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "enviot.settings")
 sys.path.append(proj_path)
 os.chdir(proj_path)
