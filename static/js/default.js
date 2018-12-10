@@ -49,7 +49,7 @@ function addInterpolationLayerToMap() {
         interpolationLayer = new ol.layer.Image({
             source: new ol.source.ImageWMS({
                 url: remote_endpoint,
-                params: {'LAYERS': 'topp:states'},
+                params: {'LAYERS': service_layer},
                 ratio: 1,
                 serverType: 'geoserver'
             })
