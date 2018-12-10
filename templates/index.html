@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Map</title>
+    <!-- Bootstrap & Leaflet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="crossorigin=""/>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">Interpolation Map in Realtime</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-10">
+          <div id="map" style="width:100%; height:800px"></div>
+        </div>
+        <div class="col-2">
+          <div class='row'>
+            <div class='col-sm-12'>Demo Steps as described in email:</div>
+            <div class='col-sm-12'>Step 1. <button type="button" class="btn btn-dark" onclick="addSiteLayerToMap()">Extract Monitoring Values</button> from these 20 monitoring sites.</div>
+            <div class='col-sm-12'>------------------</div>
+            <div class='col-sm-12'>Step 2-3, 5. <button type="button" class="btn btn-dark" onclick="createInterpolationMap()">Create Interpolation Map</button> to generate an <span id='result'><a id='result-link'>interpolation map</a></span> based on these 20 random values, and index the dataset in database.</div>
+            <div class='col-sm-12'>------------------</div>
+            <div class='col-sm-12'>Step 4. Optional, skipped here.</div>
+            <div class='col-sm-12'>------------------</div>
+            <div class='col-sm-12'>Step 6. <button type="button" class="btn btn-dark" onclick="publishWebMapService()">Publish Web Map Service</button> for seriving the interpolation map online.</div>
+            <div class='col-sm-12'>------------------</div>
+            <div class='col-sm-12'>Step 7. <button type="button" class="btn btn-dark" onclick="addInterpolationLayerToMap()">Show Interpoation Map</button> through calling the web map service published above.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{% static 'js/default.js' %}"></script>
+  </body>
+
+</html>

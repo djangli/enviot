@@ -1,0 +1,8 @@
+celery
+django
+djangorestframework
+gdal
+numpy
+rasterio
+requests
+scipy
