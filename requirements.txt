@@ -1,8 +1,9 @@
 celery
 django
 djangorestframework
-gdal
+# gdal
 numpy
+pyproj
 rasterio
 requests
 scipy
